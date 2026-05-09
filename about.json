@@ -1,0 +1,26 @@
+{
+  "name": "Summit",
+  "about_url": null,
+  "license_url": null,
+  "component": false,
+  "authors": "Penar Musaraj",
+  "color_schemes": {
+    "Summit": {
+      "primary": "32302F",
+      "secondary": "FAF8F5",
+      "tertiary": "486635",
+      "quaternary": "A43D12",
+      "header_background": "FAF8F5",
+      "header_primary": "32302F",
+      "highlight": "E4E9D3",
+      "selected": "EEECE7",
+      "hover": "F1F0F0",
+      "danger": "A43D12",
+      "success": "486635",
+      "love": "B45C7A"
+    }
+  },
+  "screenshots": [
+    "screenshots/light.png"
+  ]
+}

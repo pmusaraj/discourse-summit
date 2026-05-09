@@ -20,10 +20,7 @@
 }
 
 body {
-  background:
-    radial-gradient(circle at 15% 0%, color-mix(in srgb, var(--highlight) 62%, transparent) 0 18rem, transparent 38rem),
-    radial-gradient(circle at 95% 7%, color-mix(in srgb, #f6e7f8 55%, transparent) 0 15rem, transparent 34rem),
-    linear-gradient(180deg, var(--summit-paper) 0%, #f4f1eb 100%);
+  background: var(--summit-paper);
   color: var(--primary);
   letter-spacing: -0.006em;
 }
@@ -101,10 +98,10 @@ h4,
 .categories-list .category-list,
 .user-content,
 .directory table {
-  background: color-mix(in srgb, var(--summit-paper-raised) 92%, var(--secondary) 8%);
-  border: 1px solid var(--summit-border);
-  border-radius: var(--d-border-radius);
-  box-shadow: var(--summit-shadow);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .topic-list th,
@@ -114,7 +111,7 @@ h4,
   font-size: 0.75rem;
   letter-spacing: 0.055em;
   text-transform: uppercase;
-  border-bottom-color: var(--summit-border);
+  border-bottom-color: transparent;
 }
 
 .topic-list-item,
@@ -126,7 +123,7 @@ h4,
 .topic-list-item:hover,
 .category-list tbody tr:hover,
 .latest-topic-list-item:hover {
-  background: color-mix(in srgb, var(--summit-sage-soft) 58%, transparent);
+  background: color-mix(in srgb, var(--summit-sage-soft) 42%, transparent);
 }
 
 .topic-list .main-link a.title,
@@ -199,6 +196,8 @@ button {
 .btn svg,
 button .d-icon,
 button svg,
+.btn .d-icon svg,
+button .d-icon svg,
 .btn:hover .d-icon,
 .btn:hover svg,
 .btn:focus .d-icon,
@@ -207,8 +206,8 @@ button:hover .d-icon,
 button:hover svg,
 button:focus .d-icon,
 button:focus svg {
-  color: currentColor;
-  fill: currentColor;
+  color: inherit !important;
+  fill: currentColor !important;
 }
 
 input[type="text"],
@@ -242,11 +241,10 @@ textarea:focus,
 }
 
 .welcome-banner {
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--summit-sage-soft) 72%, white 28%), color-mix(in srgb, var(--summit-lavender) 56%, var(--secondary) 44%));
-  border: 1px solid var(--summit-border);
-  border-radius: 28px;
-  box-shadow: var(--summit-shadow);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .welcome-banner .welcome-banner__title,
@@ -257,10 +255,10 @@ textarea:focus,
 }
 
 .topic-post article {
-  background: color-mix(in srgb, var(--summit-paper-raised) 92%, var(--secondary) 8%);
-  border-color: var(--summit-border);
-  border-radius: 22px;
-  box-shadow: 0 10px 28px rgba(var(--primary-rgb), 0.04);
+  background: transparent;
+  border-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .topic-avatar,
@@ -269,7 +267,7 @@ textarea:focus,
 }
 
 .topic-body {
-  border-top-color: var(--summit-border);
+  border-top-color: transparent;
 }
 
 .cooked blockquote,
@@ -280,14 +278,14 @@ aside.quote .title {
 }
 
 #reply-control {
-  background: color-mix(in srgb, var(--secondary) 92%, white 8%);
-  box-shadow: 0 -14px 34px rgba(var(--primary-rgb), 0.08);
+  background: var(--secondary);
+  box-shadow: none;
 }
 
 .d-editor-container,
 .d-editor-textarea-wrapper {
   border-radius: 20px;
-  border-color: var(--summit-border);
+  border-color: transparent;
 }
 
 .menu-panel,

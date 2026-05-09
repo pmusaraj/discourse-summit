@@ -4,6 +4,9 @@
   "license_url": null,
   "component": false,
   "authors": "Penar Musaraj",
+  "components": [
+    "https://github.com/discourse/discourse-topic-excerpts"
+  ],
   "modifiers": {
     "serialize_topic_excerpts": true
   },

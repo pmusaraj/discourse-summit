@@ -4,6 +4,9 @@
   "license_url": null,
   "component": false,
   "authors": "Penar Musaraj",
+  "modifiers": {
+    "serialize_topic_excerpts": true
+  },
   "color_schemes": {
     "Summit": {
       "primary": "32302F",

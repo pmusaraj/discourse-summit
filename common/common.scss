@@ -17,10 +17,10 @@
   --summit-shadow: 0 14px 34px rgba(var(--primary-rgb), 0.055);
   --summit-focus: 0 0 0 3px color-mix(in srgb, var(--tertiary) 18%, transparent);
   --font-up-1: 1.0625rem;
-  --font-up-2: 1.18rem;
-  --font-up-3: 1.36rem;
-  --font-up-4: 1.66rem;
-  --font-up-5: 2.05rem;
+  --font-up-2: 1.22rem;
+  --font-up-3: 1.46rem;
+  --font-up-4: 1.86rem;
+  --font-up-5: 2.35rem;
   --d-hover: var(--primary-very-low);
 }
 
@@ -44,18 +44,35 @@ h4,
 }
 
 h1 {
-  font-size: clamp(2rem, 3.3vw, 3.35rem);
+  font-size: clamp(2.35rem, 4.4vw, 4.55rem);
 }
 
 h2,
 .topic-list .main-link a.title,
 .latest-topic-list-item .main-link a.title {
-  font-size: clamp(1.28rem, 1.7vw, 1.62rem);
+  font-size: clamp(1.45rem, 2.1vw, 2.05rem);
 }
 
 h3,
 .category-list .category-name {
-  font-size: clamp(1.12rem, 1.35vw, 1.34rem);
+  font-size: clamp(1.22rem, 1.65vw, 1.58rem);
+}
+
+.topic-title h1,
+.topic-title .fancy-title,
+#topic-title h1,
+#topic-title .fancy-title {
+  font-size: clamp(2.45rem, 4.7vw, 4.75rem);
+  line-height: 0.95;
+}
+
+.topic-list .topic-excerpt,
+.latest-topic-list-item .topic-excerpt {
+  display: block;
+  max-width: 68ch;
+  margin-top: 0.35rem;
+  font-size: 0.98rem;
+  line-height: 1.42;
 }
 
 .d-header {

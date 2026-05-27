@@ -1,27 +1,33 @@
 :root {
-  --font-family: "Avenir Next", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --heading-font-family: Georgia, "Iowan Old Style", "Times New Roman", ui-serif, serif;
-  --d-border-radius: 18px;
-  --d-button-border-radius: 999px;
-  --d-input-border-radius: 16px;
+  --font-family:
+    "Avenir Next", Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --heading-font-family:
+    Georgia, "Iowan Old Style", "Times New Roman", ui-serif, serif;
+  --d-border-radius: 12px;
+  --d-border-radius-large: 20px;
+  --d-button-border-radius: 12px;
+  --d-input-border-radius: 12px;
   --d-nav-pill-border-radius: 999px;
   --d-sidebar-row-horizontal-padding: 0.85rem;
+  --d-sidebar-link-color: var(--primary);
+  --d-sidebar-link-icon-color: var(--primary-very-high);
   --summit-paper: var(--secondary);
-  --summit-paper-raised: #fcfcfc;
-  --summit-paper-muted: #eeece7;
-  --summit-sage-soft: #e4e9d3;
-  --summit-lavender: #f6e7f8;
-  --summit-clay-soft: #f9f2ef;
+  --summit-sage-soft: var(--tertiary-400);
   --summit-border: color-mix(in srgb, var(--primary) 14%, transparent);
   --summit-border-strong: color-mix(in srgb, var(--primary) 24%, transparent);
-  --summit-shadow: 0 14px 34px rgba(var(--primary-rgb), 0.055);
-  --summit-focus: 0 0 0 3px color-mix(in srgb, var(--tertiary) 18%, transparent);
   --font-up-1: 1.0625rem;
   --font-up-2: 1.22rem;
   --font-up-3: 1.46rem;
   --font-up-4: 1.86rem;
   --font-up-5: 2.35rem;
   --d-hover: var(--primary-very-low);
+
+  --d-button-default-text-color: var(--primary);
+  --d-button-default-bg-color: var(--secondary-very-high);
+  --d-button-default-bg-color--hover: var(--tertiary);
+  --d-hover: var(--secondary-very-high);
+  --d-input-bg-color: var(--primary-50);
 }
 
 body {
@@ -50,7 +56,7 @@ h1 {
 h2,
 .topic-list .main-link a.title,
 .latest-topic-list-item .main-link a.title {
-  font-size: clamp(1.45rem, 2.1vw, 2.05rem);
+  font-size: clamp(1.35rem, 1.9vw, 1.95rem);
 }
 
 h3,
@@ -62,7 +68,7 @@ h3,
 .topic-title .fancy-title,
 #topic-title h1,
 #topic-title .fancy-title {
-  font-size: clamp(2.45rem, 4.7vw, 4.75rem);
+  font-size: clamp(2.35rem, 4vw, 4rem);
   line-height: 0.95;
 }
 
@@ -86,7 +92,7 @@ h3,
 }
 
 .sidebar-wrapper {
-  background: color-mix(in srgb, var(--secondary) 90%, white 10%);
+  background: transparent;
   border-right: 1px solid var(--summit-border);
   box-shadow: none;
 }
@@ -104,7 +110,6 @@ h3,
 
 .sidebar-section-link-wrapper .sidebar-section-link {
   border-radius: var(--d-nav-pill-border-radius);
-  color: color-mix(in srgb, var(--primary) 86%, var(--secondary));
 }
 
 .sidebar-section-link-wrapper .sidebar-section-link:hover,
@@ -126,8 +131,16 @@ h3,
 
 .list-controls .nav-pills > li a.active,
 .navigation-container .nav-pills > li a.active {
-  background: var(--primary);
+  background: var(--d-nav-color--active);
   color: var(--secondary);
+  &:after {
+    background-color: transparent;
+  }
+}
+
+.select-kit.combo-box .select-kit-header,
+.select-kit.multi-select .multi-select-header {
+  background-color: var(--primary-50);
 }
 
 .topic-list,
@@ -152,31 +165,19 @@ h3,
   border-bottom-color: transparent;
 }
 
-.topic-list tr,
-.topic-list td,
-.topic-list th,
-.topic-list tbody,
-.latest-topic-list-item,
-.category-list tr,
-.category-list td,
-.category-list th,
-.category-list tbody,
-.directory table tr,
-.directory table td,
-.directory table th,
-.user-content,
-.post-stream .topic-post,
-.topic-body,
-.topic-status-info,
-.small-action,
-.time-gap {
-  border-color: transparent;
+.topic-list,
+.category-list,
+.directory table {
+  --table-border-color: transparent;
+  --title-color--read: var(--primary-high);
 }
 
 .topic-list-item,
 .category-list tbody tr,
 .latest-topic-list-item {
-  transition: background-color 140ms ease, color 140ms ease;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
 }
 
 .topic-list-item:hover,
@@ -189,107 +190,6 @@ h3,
 .latest-topic-list-item .main-link a.title,
 .category-list .category-name {
   color: var(--primary);
-}
-
-.topic-list .topic-excerpt,
-.topic-list .topic-item-stats,
-.category-description,
-.post-info,
-.topic-meta-data .names,
-.topic-meta-data .post-infos {
-  color: color-mix(in srgb, var(--primary) 62%, var(--secondary));
-}
-
-.badge-category__wrapper,
-.badge-wrapper.bullet span.badge-category,
-.discourse-tag.box {
-  border-radius: 999px;
-}
-
-.btn,
-.btn-default,
-.btn-primary,
-.btn-flat,
-button {
-  border-radius: var(--d-button-border-radius);
-}
-
-.btn-default,
-.btn.btn-default,
-.btn-flat,
-.btn.btn-flat {
-  background: color-mix(in srgb, var(--summit-paper-raised) 90%, var(--secondary));
-  color: var(--primary);
-  border: 1px solid transparent;
-}
-
-.btn-primary,
-.btn.btn-primary,
-.create-topic {
-  background: var(--primary);
-  color: var(--secondary);
-  border: 1px solid var(--primary);
-}
-
-.btn:hover,
-.btn:focus,
-.btn-default:hover,
-.btn-default:focus,
-.btn-flat:hover,
-.btn-flat:focus {
-  background: var(--summit-sage-soft);
-  color: var(--primary);
-  border-color: color-mix(in srgb, var(--tertiary) 26%, transparent);
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.create-topic:hover,
-.create-topic:focus {
-  background: var(--tertiary);
-  color: var(--secondary);
-  border-color: var(--tertiary);
-}
-
-.btn .d-icon,
-.btn svg,
-button .d-icon,
-button svg,
-.btn .d-icon svg,
-button .d-icon svg,
-.btn:hover .d-icon,
-.btn:hover svg,
-.btn:focus .d-icon,
-.btn:focus svg,
-button:hover .d-icon,
-button:hover svg,
-button:focus .d-icon,
-button:focus svg {
-  color: inherit !important;
-  fill: currentColor !important;
-}
-
-input[type="text"],
-input[type="search"],
-input[type="email"],
-input[type="password"],
-textarea,
-.d-editor-input,
-.select-kit.combo-box .select-kit-header {
-  border-radius: var(--d-input-border-radius);
-  border-color: var(--summit-border);
-  background: color-mix(in srgb, var(--summit-paper-raised) 94%, var(--secondary));
-}
-
-input:focus,
-textarea:focus,
-.d-editor-input:focus,
-.select-kit.combo-box .select-kit-header:focus,
-.select-kit.combo-box.is-expanded .select-kit-header {
-  outline: 2px solid color-mix(in srgb, var(--tertiary) 38%, transparent);
-  outline-offset: 2px;
-  box-shadow: none;
-  border-color: var(--tertiary);
 }
 
 .search-menu .search-input input:focus,
@@ -329,16 +229,34 @@ textarea:focus,
   border-top-color: transparent;
 }
 
+nav.post-controls {
+  --d-post-control-text-color: var(--primary-high);
+  --d-button-default-text-color: var(--primary-high);
+  --primary-low-mid: var(--primary-high);
+  --d-button-flat-icon-color: var(--primary-high);
+
+  .btn {
+    --primary-medium: var(--primary-high);
+  }
+}
+
+.discourse-no-touch nav.post-controls .fade-out {
+  opacity: 0.95;
+}
+
 .cooked blockquote,
 .quote .quote-controls,
 aside.quote .title {
   border-color: transparent;
-  background: var(--summit-clay-soft);
 }
 
 #reply-control {
   background: var(--secondary);
-  box-shadow: none;
+  box-shadow: var(--shadow-card);
+}
+
+.d-editor-textarea-wrapper {
+  background: var(--primary-50);
 }
 
 .d-editor-container,
@@ -360,8 +278,7 @@ aside.quote .title {
 .group-card .card-content {
   border: 1px solid var(--summit-border);
   border-radius: 20px;
-  background: var(--summit-paper-raised);
-  box-shadow: var(--summit-shadow);
+  box-shadow: var(--shadow-card);
 }
 
 .category-list th.topics,
@@ -383,5 +300,11 @@ aside.quote .title {
   .topic-post article {
     border-radius: 16px;
     box-shadow: none;
+  }
+}
+
+@media (max-width: 39.999rem) {
+  .topic-list .right {
+    margin-left: 30px;
   }
 }

@@ -27,7 +27,21 @@
   --d-button-default-bg-color: var(--secondary-very-high);
   --d-button-default-bg-color--hover: var(--tertiary);
   --d-hover: var(--secondary-very-high);
+
   --d-input-bg-color: var(--primary-50);
+  --token-color-background-input: var(--primary-50);
+}
+
+.admin-area .sidebar-wrapper .admin-panel {
+  --d-sidebar-admin-background: var(--secondary);
+}
+
+.admin-config-area-card-section {
+  background-color: var(--secondary-very-high);
+}
+
+.d-stat-tiles .d-stat-tile {
+  background-color: var(--secondary-very-high);
 }
 
 body {
@@ -41,8 +55,7 @@ h1,
 h2,
 h3,
 h4,
-.topic-list .main-link a.title,
-.category-list .category-name,
+.main-link a.title,
 .fancy-title {
   font-family: var(--heading-font-family);
   font-weight: 500;
@@ -140,7 +153,10 @@ h3,
 
 .select-kit.combo-box .select-kit-header,
 .select-kit.multi-select .multi-select-header,
-.d-select {
+.d-multi-select-trigger,
+.d-multi-select__search-container,
+.d-select,
+textarea {
   background-color: var(--primary-50);
 }
 

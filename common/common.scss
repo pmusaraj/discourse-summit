@@ -30,18 +30,7 @@
 
   --d-input-bg-color: var(--primary-50);
   --token-color-background-input: var(--primary-50);
-}
-
-.admin-area .sidebar-wrapper .admin-panel {
-  --d-sidebar-admin-background: var(--secondary);
-}
-
-.admin-config-area-card-section {
-  background-color: var(--secondary-very-high);
-}
-
-.d-stat-tiles .d-stat-tile {
-  background-color: var(--secondary-very-high);
+  --d-chat-input-bg-color: var(--primary-50);
 }
 
 body {
@@ -303,6 +292,22 @@ aside.quote .title {
 .category-list th.stats,
 .category-list td.stats {
   padding-right: 1rem;
+}
+
+.admin-area .sidebar-wrapper .admin-panel {
+  --d-sidebar-admin-background: var(--secondary);
+}
+
+.d-admin-filter {
+  background-color: transparent;
+}
+
+.admin-contents {
+  --primary-very-low: var(--secondary-very-high);
+}
+
+.admin-config-area-card {
+  background-color: var(--primary-50);
 }
 
 @media (max-width: 760px) {
